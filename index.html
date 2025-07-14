@@ -107,6 +107,12 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
+        .hamburger::before {
+            content: '☰';
+        }
+        #menu-toggle:checked + .hamburger::before {
+            content: '✕';
+        }
         @media (max-width: 640px) {
             .nav-links {
                 display: none;
@@ -161,7 +167,7 @@
                 <a href="#" class="text-xl sm:text-2xl font-bold">Fihankra Health日本人向け</a>
             </div>
             <input type="checkbox" id="menu-toggle" class="hidden">
-            <label for="menu-toggle" class="hamburger sm:hidden">☰</label>
+            <label for="menu-toggle" class="hamburger sm:hidden"></label>
             <div class="nav-links">
                 <a href="#top" class="hover:text-teal-200 transition">トップ</a>
                 <a href="#about" class="hover:text-teal-200 transition">私たちについて</a>
