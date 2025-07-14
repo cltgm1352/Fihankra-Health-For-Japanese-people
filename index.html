@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fihankra Health日本人向けサイト</title>
+    <title>Fihankra Health日本人向け</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -47,12 +47,12 @@
             pointer-events: none;
         }
         #loading-image {
-            width: 120px; /* Reduced for mobile */
+            width: 120px;
             height: 110px;
             margin-bottom: 16px;
         }
         #loading-text {
-            font-size: 1rem; /* Adjusted for mobile */
+            font-size: 1rem;
             font-weight: 600;
             color: #1f766e;
             animation: fadeInOut 1.5s ease-in-out infinite;
@@ -69,7 +69,7 @@
         #corporate-overview-image {
             position: relative;
             width: 100%;
-            max-width: 400px; /* Reduced for mobile */
+            max-width: 400px;
             margin: 0 auto;
             opacity: 0.7;
         }
@@ -84,26 +84,23 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: black;
-            font-size: 1.5rem; /* Reduced for mobile */
+            font-size: 1.5rem;
             font-weight: 900;
             text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), -2px -2px 4px rgba(255, 255, 255, 0.8);
         }
         /* Navigation Bar */
         nav .nav-links {
             display: flex;
-            gap: 1rem; /* Reduced spacing */
+            gap: 1rem;
             align-items: center;
         }
         nav .nav-links a {
-            font-size: 0.9rem; /* Smaller font for mobile */
+            font-size: 0.9rem;
             padding: 0.4rem;
         }
         /* Hamburger Menu */
         #menu-toggle {
             display: none;
-        }
-        #menu-toggle:checked ~ .nav-links {
-            display: flex;
         }
         .hamburger {
             display: none;
@@ -118,15 +115,21 @@
                 top: 100%;
                 left: 0;
                 right: 0;
-                background: #1f766e; /* Matches teal-700 */
+                background: #1f766e;
                 padding: 1rem;
                 z-index: 10;
+                transition: transform 0.3s ease-in-out;
+                transform: translateY(-100%);
+            }
+            #menu-toggle:checked + .hamburger ~ .nav-links {
+                display: flex;
+                transform: translateY(0);
             }
             .hamburger {
                 display: block;
             }
             #corporate-overview-image .overlay-text {
-                font-size: 1.25rem; /* Further reduced for smaller screens */
+                font-size: 1.25rem;
             }
         }
         /* YouTube Video Rectangle */
