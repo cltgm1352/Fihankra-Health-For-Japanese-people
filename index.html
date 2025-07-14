@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fihankra Health日本人向け</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #top {
+            position: relative;
+        }
+        #top::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://static.wixstatic.com/media/3eb4b2_4a4e5b2394b24b3d95c571f9fa71985c~mv2.png/v1/fill/w_1280,h_510,al_c,q_90,enc_avif,quality_auto/Beyonders%20Fihankra.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5;
+            z-index: 1;
+        }
+        #top > div {
+            position: relative;
+            z-index: 2;
+        }
+        /* Loading Screen Styles */
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-in-out;
+        }
+        #loading-screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        #loading-image {
+            width: 150px;
+            height: 138px;
+            margin-bottom: 20px;
+            animation: spin 2s linear infinite;
+        }
+        #loading-text {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1f766e;
+            animation: fadeInOut 1.5s ease-in-out infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        /* Corporate Overview Image Overlay */
+        #corporate-overview-image {
+            position: relative;
+            width: 80%;
+            max-width: 532px; /* 80% of 666px */
+            margin: 0 auto;
+            opacity: 0.7;
+        }
+        #corporate-overview-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        #corporate-overview-image .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: black;
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-shadow: 3px 3px 6px rgba(255, 255, 255, 0.8), -3px -3px 6px rgba(255, 255, 255, 0.8);
+        }
+        /* Navigation Bar */
+        nav .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        nav .nav-links a {
+            font-size: 1rem;
+            padding: 0.5rem;
+        }
+        /* YouTube Video Rectangle */
+        .youtube-video {
+            aspect-ratio: 16 / 9;
+            width: 100%;
+            max-width: 560px; /* Standard YouTube embed width */
+            height: auto;
+        }
+    </style>
+</head>
+<body class="font-['Noto_Sans_JP'] bg-gray-50">
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img id="loading-image" src="https://static.wixstatic.com/media/3eb4b2_f8eb73431fa64caf96f2f2fa2c873498~mv2.jpg/v1/fill/w_150,h_138,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/9175986_orig.jpg" alt="Loading Image">
+        <p id="loading-text">読み込み中...</p>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-teal-700 text-white p-4 sticky top-0 z-10 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="https://static.wixstatic.com/media/3eb4b2_f8eb73431fa64caf96f2f2fa2c873498~mv2.jpg/v1/fill/w_150,h_138,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/9175986_orig.jpg" alt="Fihankra Health Logo" class="w-12 h-11">
+                <a href="#" class="text-2xl font-bold">Fihankra Health日本人向け</a>
+            </div>
+            <div class="nav-links">
+                <a href="#top" class="hover:text-teal-200 transition">トップ</a>
+                <a href="#about" class="hover:text-teal-200 transition">私たちについて</a>
+                <a href="#project-owner" class="hover:text-teal-200 transition">プロジェクトオーナー</a>
+                <a href="#corporate-overview" class="hover:text-teal-200 transition">法人概要</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Top Section -->
+    <section id="top" class="text-black py-24">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Fihankra Health – 共に築く、健やかな未来</h1>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">私たちについて</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <iframe class="youtube-video rounded-lg shadow-lg" src="https://www.youtube.com/embed/6RpJu7z0OaU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg leading-relaxed">私たちは、ガーナの医療が届きにくい地域に、誰もが利用できる、持続可能で文化に配慮した医療を提供する地域密着型の団体です。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Owner Section -->
+    <section id="project-owner" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-10">プロジェクトオーナー（個人）自己紹介</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <div class="text-center md:text-left">
+                        <p class="text-xl font-semibold mb-2">名前：片平 雅大</p>
+                        <p class="text-sm leading-relaxed">Fihankra Healthを運営している片平 雅大です。総合内科・在宅診療を専門とする医師です。65カ国以上を旅して途上国の現状を知り、Oxford大学 経営学修士の起業プログラムを通してFihankra Healthを設立して、卒業後の2023年9月以降も継続しています。</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://static.wixstatic.com/media/3eb4b2_defb7c1ce46c421a81498d23166add65~mv2.jpg/v1/crop/x_60,y_56,w_471,h_490/fill/w_388,h_406,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/katahira-masahiro.jpg" alt="片平 雅大" class="rounded-full shadow-lg w-64 h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Corporate Overview Section -->
+    <section id="corporate-overview" class="py-20">
+        <div class="container mx-auto px-4 text-center font-bold">
+            <div id="corporate-overview-image" class="relative mb-8">
+                <img src="https://static.wixstatic.com/media/3eb4b2_9e1c2c28546f44f5ba300dd3760a7adc~mv2.jpg/v1/fill/w_666,h_412,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_0630.jpg" alt="Corporate Overview">
+                <div class="overlay-text">法人概要</div>
+            </div>
+            <p class="text-lg mb-4">所在地: 東京都中央区</p>
+            <p class="text-lg mb-4">従業員数：4名</p>
+            <p class="text-lg mb-4">事業詳細</p>
+            <p class="text-sm leading-relaxed">私達 Fihankra Healthは、アフリカのガーナの無医村に住む貧しい方々に対して、各無医村を直接訪ねて診察や処方を行うアウトリーチサービスを提供しています。2023年9月以来、42の無医村で、1000人を超える方の診察（約1600回の診療）を提供してきました。今後は今回のプロジェクトに記載しているように遠隔診療を取り入れていく予定です。</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-teal-700 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg font-semibold hover:text-teal-200 transition duration-300 shadow-md">Fihankra Health.<a href="https://haruomilabo-home.amebaownd.com" target="_blank" class="underline hover:text-teal-100">HARUOMILABO</a></p>
+        </div>
+    </footer>
+
+    <!-- Loading Screen JavaScript -->
+    <script>
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            setTimeout(() => {
+                loadingScreen.classList.add('hidden');
+            }, 2000); // Hide after 2 seconds
+        });
+    </script>
+</body>
+</html>
